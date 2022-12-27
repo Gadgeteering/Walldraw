@@ -39,7 +39,8 @@ void gcode_G0_G1(){
 //	Serial.print("G01 X"); Serial.print(destination[X_AXIS]);
 //	Serial.print("Y"); Serial.print(destination[Y_AXIS]);
 //	Serial.print("Z"); Serial.println(destination[Z_AXIS]);
-//	
+//
+  pen_parser();
 	buffer_line_to_destination();
 	
 }

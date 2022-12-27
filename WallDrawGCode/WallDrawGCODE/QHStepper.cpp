@@ -19,9 +19,8 @@ void stepper_init(){
   IK(0, 0, target_steps_m1, target_steps_m2);
   current_steps_M1 = target_steps_m1;
   current_steps_M2 = target_steps_m2;
-
-  m1.connectToPins(11,10,9,8); //M1 L步进电机   in1~4端口对应UNO  7 8 9 10
-  m2.connectToPins(7,6,5,4);  //M2 R步进电机   in1~4端口对应UNO 2 3 5 6
+  m1.connectToPins(7,8,9,10); //M1 L步进电机   in1~4端口对应UNO  7 8 9 10
+  m2.connectToPins(2,3,5,6);  //M2 R步进电机   in1~4端口对应UNO 2 3 5 6
   m1.setSpeedInStepsPerSecond(10000);
   m1.setAccelerationInStepsPerSecondPerSecond(100000);
   m2.setSpeedInStepsPerSecond(10000);

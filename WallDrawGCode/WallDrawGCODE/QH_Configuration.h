@@ -3,6 +3,8 @@
 
 #include <Arduino.h>
 
+
+
 #define XY 2
 #define XYZ 3
 #define X_AXIS 0
@@ -20,7 +22,7 @@
 #define N_ARC_CORRECTION   25  //修正之间的极化段数
 
 
-#define X_SEPARATION  505           //两绳上方的水平距离mm 
+#define X_SEPARATION  370          //两绳上方的水平距离mm 
 #define X_MAX_POS       ( X_SEPARATION*0.5)   //x轴最大值  0位在画板中心
 #define X_MIN_POS       (-X_SEPARATION*0.5)   //x轴最小值
 
@@ -42,9 +44,28 @@
 #define HYPOT2(x,y) (sq(x)+sq(y))
 #define HYPOT(x,y)  SQRT(HYPOT2(x,y))
 
+//抬笔舵机的角度参数  具体数值要看摆臂的安放位置，需要调节
+#define PEN_UP_ANGLE    120  //抬笔
+#define PEN_DOWN_ANGLE  85  //落笔
+
+
+#define step_delay      1   //步进电机每步的等候时间 （微妙）
+#define TPD             300   //转弯等待时间（毫秒），由于惯性笔会继续运动，暂定等待笔静止再运动。
+
+
+//需要调节的参数 =============================================
+
+
+#define PEN_DOWN 1  //笔状态  下笔
+#define PEN_UP 0    //笔状态  抬笔
+
+
+
+
 extern String gcode_command;
 extern float destination[XYZ];
 extern float current_position[XYZ];
 extern long current_steps_M1, current_steps_M2; //当前步进电机相对于0点位置总步数
+
 
 #endif

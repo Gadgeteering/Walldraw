@@ -4,6 +4,7 @@
 
 #include "QH_Configuration.h"
 #include "QHStepper.h"
+#include "pen.h"
 
 void process_parsed_command();
 void gcode_G0_G1();
